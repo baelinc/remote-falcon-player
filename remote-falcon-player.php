@@ -385,7 +385,7 @@ function rfp_ajax() {
                 return;
             }
             if ($r['code'] !== 200) {
-                wp_send_json_error(array('message'=>'API error HTTP '.$r['code'].': '.$r['body'],$r['code']));
+                wp_send_json_error(array('message'=>'API error HTTP '.$r['code'].': '.$r['body']),$r['code']);
                 return;
             }
             wp_send_json_success($r['data']);
