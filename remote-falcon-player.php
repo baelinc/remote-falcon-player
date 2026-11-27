@@ -24,4 +24,10 @@ define( 'RFP_VERSION',  '3.1.1' );
 define( 'RFP_DIR',      plugin_dir_path( __FILE__ ) );
 define( 'RFP_URL',      plugin_dir_url(  __FILE__ ) );
 
+if ( ! file_exists( RFP_DIR . 'includes/rfp-core.php' ) ) {
+    add_action( 'admin_notices', function () {
+        echo '<div class="notice notice-error"><p><strong>Remote Falcon Player:</strong> the <code>includes/rfp-core.php</code> file is missing. Re-upload the full plugin folder.</p></div>';
+    });
+    return;
+}
 require_once RFP_DIR . 'includes/rfp-core.php';
