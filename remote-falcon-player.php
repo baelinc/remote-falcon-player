@@ -11,6 +11,15 @@
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
+/* Another copy of this plugin is already loaded (e.g. an old folder left installed).
+ * Bail out with an admin notice instead of causing a fatal "cannot redeclare" error. */
+if ( defined( 'RFP_VERSION' ) ) {
+    add_action( 'admin_notices', function () {
+        echo '<div class="notice notice-error"><p><strong>Remote Falcon Player:</strong> two copies of this plugin are active. Deactivate and delete the duplicate on the Plugins page.</p></div>';
+    });
+    return;
+}
+
 define( 'RFP_VERSION',  '3.1.1' );
 define( 'RFP_DIR',      plugin_dir_path( __FILE__ ) );
 define( 'RFP_URL',      plugin_dir_url(  __FILE__ ) );
