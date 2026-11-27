@@ -3,7 +3,7 @@
  * Plugin Name:       Remote Falcon Player
  * Plugin URI:        https://remotefalcon.com
  * Description:       Now Playing, Up Next, and song voting/requesting from Remote Falcon on your WordPress site.
- * Version:           3.1.1
+ * Version:           3.2.0
  * Author:            Johnathan Evans
  * License:           GPL-2.0+
  * Text Domain:       remote-falcon-player
@@ -20,7 +20,7 @@ if ( defined( 'RFP_VERSION' ) || function_exists( 'rfp_get' ) ) {
     return;
 }
 
-define( 'RFP_VERSION',  '3.1.1' );
+define( 'RFP_VERSION',  '3.2.0' );
 define( 'RFP_DIR',      plugin_dir_path( __FILE__ ) );
 define( 'RFP_URL',      plugin_dir_url(  __FILE__ ) );
 

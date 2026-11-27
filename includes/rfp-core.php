@@ -536,3 +536,5 @@ function rfp_shortcode($atts) {
 <?php
     return ob_get_clean();
 }
+
+require_once RFP_DIR . 'includes/rfp-updater.php';
