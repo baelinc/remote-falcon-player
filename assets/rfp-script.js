@@ -186,8 +186,13 @@
         }
 
         // Up Next
-        $el.find('.rfp-next-up-wrap').toggle(this.showNext);
-        if (this.showNext) {
+        // Only show Up Next when something is actually queued (jukebox request)
+        // or voted for; otherwise playingNext isn't a real queued song.
+        var hasQueue = (Array.isArray(data.requests) && data.requests.length > 0) ||
+            (mode === 'voting' && Object.keys(voteMap || {}).some(function (k) { return voteMap[k] > 0; }));
+        var showNextNow = this.showNext && hasQueue && !!nxtStr;
+        $el.find('.rfp-next-up-wrap').toggle(showNextNow);
+        if (showNextNow) {
             $el.find('.rfp-next-name').text(this.getDisplayName(seqs, nxtStr) || '—');
             $el.find('.rfp-next-artist').text(this.getArtist(seqs, nxtStr));
         }

@@ -4,7 +4,7 @@
  * Plugin URI:        https://remotefalcon.com
  * Description:       Now Playing, Up Next, and song voting/requesting from Remote Falcon on your WordPress site.
  * Version:           3.1.1
- * Author:            Your Light Show
+ * Author:            Johnathan Evans
  * License:           GPL-2.0+
  * Text Domain:       remote-falcon-player
  */
